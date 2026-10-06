@@ -39,9 +39,11 @@ $config_data = Config::load();
 
     <style>
         body {
-            margin: 0;
-            position: relative;
-            min-height: 100vh;
+    margin: 0;
+    position: relative;
+    min-height: 100vh;
+    background: transparent;
+    overflow: hidden;
         }
 
        body::before {
