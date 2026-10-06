@@ -44,47 +44,32 @@ $config_data = Config::load();
             min-height: 100vh;
         }
 
-        body::before {
-            content: "";
-            position: fixed;
-            /* Siempre visible */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /*background: url("../images/subestacion.png") no-repeat center center;*/
-            /*opacity: 0.5;*/
-            opacity: <?php echo $config_data->app_pagina_login_imagen_fondo_opacy;?>;
-            /* Transparencia solo en la imagen */
-            pointer-events: none;
-            /* No bloquea clics */
-            z-index: -1;
-            /* Detrás del contenido */
+       body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 
-            /*background-image: url("./images/editable/background_image.jpg");*/
-            background-image: url("./images/editable/<?php echo $config_data->app_pagina_login_imagen_fondo;?>");
-             
-            /* URL de la imagen */
-            background-size: cover;
-            /* Ajusta la imagen al tamaño de la pantalla */
-            background-position: center;
-            /* Centra la imagen */
-            background-repeat: no-repeat;
-            /* Evita repeticiones */
-            background-attachment: fixed;
-            /* Hace que la imagen quede flotante/fija */
+    background-image: url("./images/editable/fondocfe.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
-        }
-
-        .contenido {
-            background: rgba(255, 255, 255, 1.0);
-            padding: 20px;
-            margin: 150px auto;
-            width: 650px;
-            border-radius: 10px;
-            
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-        }
+    opacity: 1;
+    pointer-events: none;
+    z-index: -1;
+}
+      .contenido {
+    background: rgba(255, 255, 255, 1.0);
+    padding: 39px;
+    margin: 120px auto;
+    width: 750px;
+    border-radius: 70px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
     </style>
 
 </head>
@@ -104,7 +89,7 @@ $config_data = Config::load();
             </div>
             <div class="row" style="padding: 10px 15px 15px 15px; text-align: center;">
                 <div class="col">
-                    <img src="images/editable/login.png" style='width: 200px;' />
+                    <img src="images/editable/usuariocfe.png" style='width: 250px;' />
                 </div>
                 <div class="col">
                     <form id="loginForm" action="?controller=login&action=loginUser" method="post">
