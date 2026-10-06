@@ -33,7 +33,7 @@
         <tipo_fondo_background_color>#cd1d8d</tipo_fondo_background_color>
     </canvas>
     <bd_sqlite>
-        <ruta_bd>database/contenedorarchivos.db</ruta_bd>
+        <ruta_bd>../database/pcam.db</ruta_bd>
     </bd_sqlite>
     <archivo_zip>
         <nombre>PCAM</nombre>

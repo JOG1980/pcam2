@@ -26,12 +26,11 @@ $controller = $_GET['controller'] ?? 'login';
 $action = $_GET['action'] ?? 'loginIP';
 
 //se accede a la configuracion para saber que tipo de contenedor es si publico o privado
-//require_once CONFIG_PATH . '/Config.php'; //incluye la variable de $config_data para la configuracion
-//$config = Config::load();
-//$contenedor_privado = $config->contenedor_privado;
+require_once CONFIG_PATH . '/Config.php'; //incluye la variable de $config_data para la configuracion
+$config = Config::load();
 
 
-/*
+
 if ($controller == 'login') {
     if ($action == 'loginIP') {
         require_once CONTROLLER_PATH . '/LoginController.php';
@@ -64,7 +63,7 @@ if ($controller == 'login') {
         }   
     }
    
-} */
+} 
 
 require VIEW_PATH . '/login.php';
 
