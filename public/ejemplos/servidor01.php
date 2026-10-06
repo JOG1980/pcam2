@@ -1,4 +1,4 @@
-<?php_ROUND_HALF_DOWN
+<?php
 
 $mi_username = $_GET['var_username'];
 $mi_password = $_GET['var_password'];

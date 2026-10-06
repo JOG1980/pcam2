@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuracion_contenedor_archivos>
+<configuracion_pcam>
     <app><!--Esta area no es editable desde la app, solo a nivel de archivo-->
         <header>
             <color_fondo>white</color_fondo>
         </header>
         <pagina_login>
-            <imagen_fondo>background_image.jpg</imagen_fondo>
+            <imagen_fondo>red_gmo_difusa.jpg</imagen_fondo>
             <imagen_fondo_opacy>0.2</imagen_fondo_opacy>
         </pagina_login>
         <pagina_contenido>
-            <imagen_fondo>background_image.jpg</imagen_fondo>
+            <imagen_fondo>red_gmo_difusa.jpg</imagen_fondo>
         </pagina_contenido>
     </app>
     <pagina>
         <titulos>
-            <titulo_pagina>Contenedor de Archivos</titulo_pagina>
+            <titulo_pagina>PCAM</titulo_pagina>
             <titulo1>Gerencia Regional de Transmisión Central</titulo1>
             <titulo2>Zona de Operación de Transmision Guerrero Morelos</titulo2>
-            <titulo3>Contenedor de Archivos</titulo3>
+            <titulo3>PCAM</titulo3>
         </titulos>
         <texto_color>
             <titulo_pagina_color>#000000</titulo_pagina_color>
@@ -32,21 +32,17 @@
         <tipo_fondo_opacity>0.2</tipo_fondo_opacity>
         <tipo_fondo_background_color>#cd1d8d</tipo_fondo_background_color>
     </canvas>
-    <contenedor>
-        <privado>0</privado><!-- 0 publico para solo ver, 1 privado acceso restringido-->
-        <ruta_base>__FCONTAINER__</ruta_base><!-- Ruta base (raiz) de donde se empiezan a contener todos los archivos -->
-    </contenedor>
     <bd_sqlite>
-        <ruta_bd>basedatos/contenedorarchivos.db</ruta_bd>
+        <ruta_bd>database/contenedorarchivos.db</ruta_bd>
     </bd_sqlite>
     <archivo_zip>
-        <nombre>ContenedorArchivos</nombre>
+        <nombre>PCAM</nombre>
         <ext>zip</ext>
-        <agregar_fecha/><!-- 0:NO , 1:SI -->
+        <agregar_fecha>1</agregar_fecha><!-- 0:NO , 1:SI -->
     </archivo_zip>
     <servidor_smtp>
         <ip>10.26.1.9</ip>
         <port>25</port>
         <remitente>noreply@cfe.mx</remitente>
     </servidor_smtp>
-</configuracion_contenedor_archivos>
+</configuracion_pcam>

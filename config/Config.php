@@ -47,9 +47,6 @@ class Config
         $config_data->canvas_tipo_fondo_background_color = (string) $xml->canvas->tipo_fondo_background_color;
 
 
-        $config_data->contenedor_privado = (string) $xml->contenedor->privado;
-        $config_data->contenedor_ruta_base = (string) $xml->contenedor->ruta_base;
-        //$config_data->nivel_inicial = "";
 
         $config_data->base_datos_sqlite  = (string) $xml->bd_sqlite->ruta_bd;
 
@@ -65,7 +62,7 @@ class Config
         return $config_data;
     }
 
-     static function guardar($config_data)
+     static function save($config_data)
     {
         $xml = simplexml_load_file(CONFIG_PATH . '/config.xml');
         
@@ -93,9 +90,6 @@ class Config
         $xml->canvas->tipo_fondo = $config_data->canvas_tipo_fondo;
         $xml->canvas->tipo_fondo_opacity = $config_data->canvas_tipo_fondo_opacity;
         $xml->canvas->tipo_fondo_background_color = $config_data->canvas_tipo_fondo_background_color;
-        
-           
-        $xml->contenedor->privado = $config_data->contenedor_privado;
         
         $xml->archivo_zip->nombre    = $config_data->archivo_zip_nombre;
         $xml->archivo_zip->agregar_fecha = $config_data->archivo_zip_agregar_fecha;

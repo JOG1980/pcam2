@@ -7,11 +7,11 @@
 </head>
 <body>
     <form action="servidor01.php" method="get">
-        <label for="">username: </label>
-        <input type="text" name="var_username" id="">
-        <label for="">password: </label>
-        <input type="text" name="var_password" id="">
-        <input type="submit" value="">
+        <label for=""><h1>username: </h1></label>
+        <input type="text" name="var_username" id="" style='font-size: 30px;'>
+        <label for=""><h1>password: </h1></label>
+        <input type="text" name="var_password" id="" style='font-size: 30px;'><br>
+        <input type="submit" value="ENVIAR CONTENIDO"  style='font-size: 30px;'>
     </form>
 </body>
 </html>
