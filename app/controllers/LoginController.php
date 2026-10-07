@@ -10,11 +10,12 @@
 //     session_start();
 // }
 
-require_once CONFIG_PATH . '/Config.php'; //incluye la variable de $config_data para la configuracion
-//require_once('./utils.php'); //incluye la variable funcion de GetIPClient
+require_once CONFIG_PATH . '/Config.php'; 
+// Incluye el archivo de configuración para poder obtener datos
+// como la ruta de la base de datos.
 require_once CONTROLLER_PATH . '/AuthController.php'; //incluye las funciones de autenticacion para las IP registradas en la tabla usuarios
-
-
+// Incluye AuthController para poder buscar usuarios,
+// IPs y correos en la base de datos.
 
 class LoginController
 {
@@ -23,13 +24,15 @@ class LoginController
     //esta funcion se obtiene la IP del cliente ---------------------------------
     private function getClientIP()
     {
+    // Son diferentes formas en las que el servidor
+    // puede recibir la IP del usuario.
         $keys = [
             'HTTP_CLIENT_IP',
             'HTTP_X_FORWARDED_FOR',
             'HTTP_X_REAL_IP',
             'REMOTE_ADDR'
         ];
-
+    // Revisamos cada una de las opciones anteriores.
         foreach ($keys as $key) {
             if (!empty($_SERVER[$key])) {
                 foreach (explode(',', $_SERVER[$key]) as $ip) {
