@@ -61,7 +61,7 @@ if ($controller == 'login') {
     }
     else if ($action == 'nologin') {
 
-        if ($contenedor_privado=='0') {
+       if (($config['contenedor_privado'] ?? 0) == '0') {
         // Existe y tiene valor
             require_once CONTROLLER_PATH . '/LoginController.php';
             $obj = new LoginController();

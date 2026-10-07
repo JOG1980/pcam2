@@ -80,9 +80,10 @@ if($config_data->canvas_usar_background_color){
 
     <style>
         body {
-            margin: 0;
-            position: relative;
-            min-height: 100vh;
+          margin: 0;
+          position: relative;
+          min-height: 100vh;
+          overflow: hidden;
         }
 
         body::before {
@@ -95,14 +96,14 @@ if($config_data->canvas_usar_background_color){
             height: 100%;
             /*background: url("./images/editable/background_image.jpg") no-repeat center center;*/
             /*opacity: 0.2;*/
-            opacity: <?php echo $config_data->canvas_tipo_fondo_opacity; ?>;
+            opacity: 0.75;
             /* Transparencia solo en la imagen */
             pointer-events: none;
             /* No bloquea clics */
             z-index: -1;
             /* Detrás del contenido */
             /*background-image: url("./images/editable/background_image.jpg");*/
-            background-image: <?php if($config_data->canvas_tipo_fondo =='1') echo "url('./images/editable/$config_data->app_pagina_contenido_imagen_fondo')"; else echo''; ?>;
+            background-image: <?php if($config_data->canvas_tipo_fondo =='1') echo "url('./images/editable/fondocfe.png')"; else echo''; ?>;
             /* URL de la imagen */
             background-size: cover;
             /* Ajusta la imagen al tamaño de la pantalla */
@@ -110,7 +111,7 @@ if($config_data->canvas_usar_background_color){
             /* Centra la imagen */
             background-repeat: no-repeat;
             /* Evita repeticiones */
-            background-attachment: fixed;
+            background-attachment: fixed;   
             /* Hace que la imagen quede flotante/fija */
             /*background-color: red;*/
             background-color: <?php if($config_data->canvas_tipo_fondo =='2') echo $config_data->canvas_tipo_fondo_background_color; else echo''; ?>;
