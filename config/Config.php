@@ -2,7 +2,15 @@
 
 //CONFIG_PATH define la ruta ABSOLUTA DEL ARCHIVO DE CONFIGURACION
 
+//Abre un archivo de configuración XML desde su carpeta y lo traduce a datos que PHP puede entender y usar fácilmente. 
 
+//⁠class Config⁠: Es una "caja" donde se agrupan las herramientas que manejan los ajustes del sistema. 
+
+//⁠static function load()⁠ (Método de clase): Permite invocar ⁠Config::load()⁠ directamente en memoria sin instanciar un objeto (⁠new Config⁠). 
+
+//⁠CONFIG_PATH . '/config.xml'⁠: La dirección exacta en la computadora donde está guardado el archivo de configuración. 
+
+//⁠simplexml_load_file()⁠: Lee el archivo ⁠.xml⁠ y convierte su texto en datos organizados dentro de la variable ⁠$xml⁠. 
 
 class Config
 {

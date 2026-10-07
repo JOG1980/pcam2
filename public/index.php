@@ -1,4 +1,9 @@
 <?php
+/**
+ * @var unset $contenedor_privado
+ * @var string $controller
+ * @var string $action  
+ */
 
 //definimos la variable inicial del proyecto, todo se direcciona a este archivo
 //es importnte que siempre se ejecute primero este archivo para que genere estas rutas
@@ -21,7 +26,9 @@ if (!defined('ROOT_PATH')) { //si la ruta raiz no esta definida, define todas la
 
 $mi = CONTROLLER_PATH;
 
-
+// Busca en la URL si se indicó qué controller se quiere utilizar. 
+//$_GET['controller'] obtiene el valor de "controller" de la URL.?? significa: si no existe ese valor, utiliza el que está después. 
+//Si no se indica ningún controller, se utiliza "login" por defecto. 
 $controller = $_GET['controller'] ?? 'login';
 $action = $_GET['action'] ?? 'loginIP';
 
@@ -54,7 +61,7 @@ if ($controller == 'login') {
     }
     else if ($action == 'nologin') {
 
-        if($contenedor_privado=='0'){
+        if ($contenedor_privado=='0') {
         // Existe y tiene valor
             require_once CONTROLLER_PATH . '/LoginController.php';
             $obj = new LoginController();
