@@ -128,7 +128,7 @@ if($config_data->canvas_usar_background_color){
     <input type="hidden" id="hd_usuario_accion_seleccionada" value='' /> <!-- almacena si se va a cear o modificar un usuario-->
 
 
-    <!--?php require_once VIEW_PATH . '/cargador.php'; ?-->
+    <?php require_once VIEW_PATH . '/cargador.php'; ?>
     <?php require_once VIEW_PATH . '/header.php'; ?>
 
 
@@ -414,6 +414,7 @@ if($config_data->canvas_usar_background_color){
 
         <script src="./js/extensiones.js"></script><!--extensiones de archivos-->
         <script src="./js/contenido.js"></script>
+        
 
 
 
@@ -441,6 +442,9 @@ if($config_data->canvas_usar_background_color){
     <img src="images/barra/usuarios.svg" alt="">
     <span>Usuarios</span>
 </button>
+
+
+
 
     <button class="btn-barra" type="button">
         <img src="images/barra/BajarArchivos.svg" alt="">

@@ -28,3 +28,7 @@
         </div>
     </div>
 </div>
+
+<!-- En la misma vista de cargadir agregamos su codigo javascript-->
+<script src="./js/cargador.js"></script>
+        
