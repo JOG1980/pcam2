@@ -114,10 +114,7 @@ if($config_data->canvas_usar_background_color){
             background-attachment: fixed;   
             /* Hace que la imagen quede flotante/fija */
             /*background-color: red;*/
-            background-color: <?php if($config_data->canvas_tipo_fondo =='2') echo $config_data->canvas_tipo_fondo_background_color; else echo''; ?>;
         }
-
-     
     </style>
 
 </head>
@@ -140,24 +137,9 @@ if($config_data->canvas_usar_background_color){
             <div class="row">
                 <div class="col-2">
                     <div class="d-flex  gap-1">
-                        <button class="btn my_btn" id="btn_home_file" title="Inicio"><img src="./images/32x32/application_home.png" /></button>
                       
                     </div>
-                </div>
-
-               
-
-                <div class="col">
-                    <div class="d-flex justify-content-end gap-2">
-
-                        <button class="btn my_btn" id="btn_download_file" title="Bajar Archivos"><img src="./images/32x32/download_cloud.png" /></button>
-                        <?php if ($rol_id == 1) {
-                            echo ("<button class='btn my_btn' id='btn_config_list_users' title='Configuración de usuarios'><img src='./images/32x32/user_edit.png' /></button>");
-                            echo ("<button class='btn my_btn' id='btn_config' title='Configuración General'><img src='./images/32x32/cog.png' /></button>");
-                        } ?>
-                        <a href="index.php?controller=login&action=logOut"><button class="btn my_btn" id="" title="Logout"><img src="./images/32x32/door_out.png" /></button></a>
-
-                    </div>
+        
                 </div>
 
             </div>
@@ -326,7 +308,7 @@ if($config_data->canvas_usar_background_color){
                                 Lista de Usuarios con acceso al sitio (<span id="num_lista_usurios">0</span> elementos)
                             </div>
                             <div style="width: 20%; text-align: right;">
-                                <button class="btn my_btn" id="btn_agregar_usuario" title="Agregar usuarios" ><img src="./images/32x32/user_add.png" /></button>
+                                <button class="btn my_btn" id="btn_agregar_usuario" title="Agregar usuarios" ></button>
                             </div>
                         </div>
                         <table id="config_table_users" class="table">
@@ -432,5 +414,119 @@ if($config_data->canvas_usar_background_color){
 
         <script src="./js/extensiones.js"></script><!--extensiones de archivos-->
         <script src="./js/contenido.js"></script>
+
+
+
+
+
+<!--segunda pagina barra y recuadro -->
+<nav class="barra">
+    <a class="btn-barra" href="#">
+        <img src="images/barra/inicio.svg" alt="">
+        <span>Inicio</span>
+    </a>
+
+    <div class="espacio"></div>
+
+    <a class="btn-barra" href="#">
+        <img src="images/barra/confi.svg" alt="">
+        <span>Administrar</span>
+    </a>
+
+<button class="btn-barra"
+        type="button"
+        id="btn_abrir_usuarios"
+        data-bs-toggle="modal"
+        data-bs-target="#configUserListModal">
+    <img src="images/barra/usuarios.svg" alt="">
+    <span>Usuarios</span>
+</button>
+
+    <button class="btn-barra" type="button">
+        <img src="images/barra/BajarArchivos.svg" alt="">
+        <span>Descargar</span>
+    </button>
+
+   <a class="btn-barra" href="index.php?controller=auth&action=logout">
+    <img src="images/barra/logout.svg" alt="">
+        <span>Salir</span>
+    </a>
+</nav>
+
+<style>
+.barra {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 12px 20px 0;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, .95);
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+}
+
+.btn-barra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 62px;
+    padding: 6px 8px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: none;
+    cursor: pointer;
+    font: bold 11px Arial, sans-serif;
+    color: #00664f;
+    text-decoration: none;
+}
+
+.btn-barra img {
+    width: 26px;
+    height: 26px;
+}
+
+.btn-barra:hover {
+    background: #e3f4ea;
+    border-color: #b9dcc8;
+}
+
+.espacio {
+    flex: 1;
+}
+
+
+/* ---------- RECUADRO PRINCIPAL ---------- */
+
+.cuerpo {
+    flex: 1;
+    display: flex;
+    margin: 10px 20px;
+    min-height: 450px;
+}
+
+.panel {
+    background: rgba(255, 255, 255, .93);
+    border-radius: 14px;
+    padding: 20px;
+    overflow: auto;
+}
+
+.contenido {
+    flex: 1;
+}
+
+.bienvenida {
+    text-align: center;
+    margin-top: 120px;
+    color: #333;
+}
+
+.bienvenida h2 {
+    color: #00664f;
+    font-size: 28px;
+    margin: 0 0 10px;
+}
+</style>
 
 </body>

@@ -29,51 +29,6 @@ $config_data = Config::load();
 
     <link rel="icon" type="image/png" sizes="32x32" href="./images/cfe_letras.png" />
 
-    <style>
-        body {
-            margin: 0;
-            position: relative;
-            min-height: 100vh;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            /* Siempre visible */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /*background: url("../images/subestacion.png") no-repeat center center;*/
-            opacity: 0.5;
-            /* Transparencia solo en la imagen */
-            pointer-events: none;
-            /* No bloquea clics */
-            z-index: -1;
-            /* Detrás del contenido */
-
-            background-image: url("./images/fondo2.jpg");
-            /* URL de la imagen */
-            background-size: cover;
-            /* Ajusta la imagen al tamaño de la pantalla */
-            background-position: center;
-            /* Centra la imagen */
-            background-repeat: no-repeat;
-            /* Evita repeticiones */
-            background-attachment: fixed;
-            /* Hace que la imagen quede flotante/fija */
-
-        }
-
-        .contenido {
-            background: rgba(255, 255, 255, 1.0);
-            padding: 20px;
-            margin: 200px auto;
-            width: 650px;
-            border-radius: 10px;
-        }
-    </style>
-
 </head>
 
 <body>

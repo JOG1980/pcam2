@@ -66,10 +66,10 @@ $config_data = Config::load();
 }
       .contenido {
     background: rgba(255, 255, 255, 1.0);
-    padding: 39px;
+    padding: 20px;
     margin: 120px auto;
     width: 750px;
-    border-radius: 70px;
+    border-radius: 50px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
 }
     </style>
