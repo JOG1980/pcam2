@@ -72,6 +72,98 @@ if ($controller == 'login') {
    
 } 
 
+//configuracion de usuarios --------------------------
+else if ($controller == 'usuarios') {
+
+    $rol_id = $_SESSION["rol_id"];
+    //Si el perfil es de superusuario y usuario
+    if ($rol_id == 1) {
+
+
+        require_once CONTROLLER_PATH . '/UsuariosController.php';
+
+        if ($action == 'obtener') {
+            $obj = new UsuariosController();
+            $obj->obtenerTodosUsuarioBD();
+            exit;
+        } else if ($action == 'nuevo') {
+            $datos = json_decode(file_get_contents("php://input"), true);
+            $nombre = $datos['nombre'];
+            $username = $datos['username'];
+            $password = $datos['password'];
+            $email = $datos['email'];
+            $ip = $datos['ip'];
+            $rol = $datos['rol'];
+            $nivel = $datos['nivel'];
+            $obj = new UsuariosController();
+            $obj->nuevoUsuarioBD($nombre,$username,$password,$email,$ip,$rol,$nivel);
+            exit;
+        } else if ($action == 'actualizar') {
+            $datos = json_decode(file_get_contents("php://input"), true);
+            $id = $datos['id'];
+            $nombre = $datos['nombre'];
+            $username = $datos['username'];
+            $password = $datos['password'];
+            $email = $datos['email'];
+            $ip = $datos['ip'];
+            $rol = $datos['rol'];
+            $nivel = $datos['nivel'];
+            $obj = new UsuariosController();
+            $obj->actualizarUsuarioBD($id,$nombre,$username,$password,$email,$ip,$rol,$nivel);
+            exit;
+        } else if ($action == 'borrar') {
+            $datos = json_decode(file_get_contents("php://input"), true);
+            $id = $datos['id'];
+            $obj = new UsuariosController();
+            $obj->borrarUsuarioBD($id);
+            exit;
+        }
+    }
+}
+//configuracion general --------------------------
+else if ($controller == 'configuracion') {
+
+    $rol_id = $_SESSION["rol_id"];
+
+    $datos = json_decode(file_get_contents("php://input"), true);
+    //Si el perfil es de superusuario y usuario
+    if ($rol_id == 1) {
+
+
+        require_once CONTROLLER_PATH . '/ConfiguracionController.php';
+
+        if ($action == 'obtener') {
+            $obj = new ConfiguracionController();
+            $obj->obtener();
+            exit;
+        } else if ($action == 'guardar') {
+
+            //$nuevo_nombre = $datos ?? "";
+            $obj = new ConfiguracionController();
+            $obj->guardar($datos);
+            exit;
+        }
+    }
+}
+//recobrar cr4edenciales --------------------------
+else if ($controller == 'recobrarcredenciales') {
+
+
+    require_once CONTROLLER_PATH . '/RecobrarCredencialesController.php';
+
+    if ($action == 'solicitaremail') {
+
+        RecobrarCredencialesController::solicitarEmail();
+        exit;
+    } else if ($action == 'enviaremail') {
+
+
+        $email = $_POST['email'] ?? '';
+        RecobrarCredencialesController::enviarEmail($email);
+        exit;
+    }
+}
+
 require VIEW_PATH . '/login.php';
 
 exit;

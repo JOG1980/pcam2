@@ -69,12 +69,14 @@ if($config_data->canvas_usar_background_color){
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"-->
     <link rel="stylesheet" href="./jquery_plugins/jsTree/themes/default/style.min.css" />
-    <link href="./jquery_plugins/DataTables/datatables.min.css" rel="stylesheet">
+    <link href="./js/jquery_plugins/DataTables/datatables.min.css" rel="stylesheet">
     <!--link href="https://cdn.datatables.net/v/bs5/dt-3.0.3/datatables.min.css" rel="stylesheet" integrity="sha384-Maig33PgZZN3UMUa9qasQfI9v9qsxL0zJWaH6fwalfIfMocpM539Tx00AnbMaE62" crossorigin="anonymous"-->
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/menu.css" />
     <link rel="stylesheet" href="css/contenido.css" />
+    
 
     <link rel="icon" type="image/png" sizes="32x32" href="./images/assets/cfe_letras.png" />
 
@@ -131,21 +133,46 @@ if($config_data->canvas_usar_background_color){
     <?php require_once VIEW_PATH . '/cargador.php'; ?>
     <?php require_once VIEW_PATH . '/header.php'; ?>
 
-
+    
     <div class="container-fluid">
-        <div class="my_barra_menu">
-            <div class="row">
-                <div class="col-2">
-                    <div class="d-flex  gap-1">
-                      
-                    </div>
-        
-                </div>
+        <!--segunda pagina barra y recuadro -->
+        <nav class="barra">
+            <a class="btn-barra" href="#">
+                <img src="images/barra/inicio.svg" alt="">
+                <span>Inicio</span>
+            </a>
 
-            </div>
-        </div>
+            <div class="espacio"></div>
+
+            <a class="btn-barra" href="#">
+                <img src="images/barra/confi.svg" alt="">
+                <span>Administrar</span>
+            </a>
+
+            <button class="btn-barra"
+                type="button"
+                id='btn_config_list_users' title='Configuración de usuarios'>
+                <img src="images/barra/usuarios.svg" alt="">
+                <span>Usuarios</span>
+        </button>
+
+
+
+
+            <button class="btn-barra" type="button">
+                <img src="images/barra/BajarArchivos.svg" alt="">
+                <span>Descargar</span>
+            </button>
+
+        <a class="btn-barra" href="index.php?controller=auth&action=logout">
+            <img src="images/barra/logout.svg" alt="">
+                <span>Salir</span>
+            </a>
+        </nav>
+
+
+      
     </div>
-
 
 
 
@@ -323,7 +350,6 @@ if($config_data->canvas_usar_background_color){
                                     <th>ip</th>
                                     <th>rol_id</th>
                                     <th>nombre_rol</th>
-                                    <th>nivel inicial</th>
                                     <th>&nbsp;</th>
                                 </tr>
                             </thead>
@@ -408,129 +434,11 @@ if($config_data->canvas_usar_background_color){
         <script src="./jquery_plugins/jsTree/jstree.min.js"></script>
 
 
-        <script src="./jquery_plugins/DataTables/datatables.min.js"></script>
+        <script src="./js/jquery_plugins/DataTables/datatables.min.js"></script>
         <!--script src="https://cdn.datatables.net/v/bs5/dt-3.0.3/datatables.min.js" integrity="sha384-U3G//lYwFPbrDV7w5uhOUSxHgb+hj1XYov+neDtWPWsO+xB38Puvo2sTlUSNw/bj" crossorigin="anonymous"></script-->
 
 
         <script src="./js/extensiones.js"></script><!--extensiones de archivos-->
         <script src="./js/contenido.js"></script>
-        
-
-
-
-
-
-<!--segunda pagina barra y recuadro -->
-<nav class="barra">
-    <a class="btn-barra" href="#">
-        <img src="images/barra/inicio.svg" alt="">
-        <span>Inicio</span>
-    </a>
-
-    <div class="espacio"></div>
-
-    <a class="btn-barra" href="#">
-        <img src="images/barra/confi.svg" alt="">
-        <span>Administrar</span>
-    </a>
-
-<button class="btn-barra"
-        type="button"
-        id="btn_abrir_usuarios"
-        data-bs-toggle="modal"
-        data-bs-target="#configUserListModal">
-    <img src="images/barra/usuarios.svg" alt="">
-    <span>Usuarios</span>
-</button>
-
-
-
-
-    <button class="btn-barra" type="button">
-        <img src="images/barra/BajarArchivos.svg" alt="">
-        <span>Descargar</span>
-    </button>
-
-   <a class="btn-barra" href="index.php?controller=auth&action=logout">
-    <img src="images/barra/logout.svg" alt="">
-        <span>Salir</span>
-    </a>
-</nav>
-
-<style>
-.barra {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin: 12px 20px 0;
-    padding: 8px 14px;
-    background: rgba(255, 255, 255, .95);
-    border-radius: 14px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
-}
-
-.btn-barra {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    min-width: 62px;
-    padding: 6px 8px;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    background: none;
-    cursor: pointer;
-    font: bold 11px Arial, sans-serif;
-    color: #00664f;
-    text-decoration: none;
-}
-
-.btn-barra img {
-    width: 26px;
-    height: 26px;
-}
-
-.btn-barra:hover {
-    background: #e3f4ea;
-    border-color: #b9dcc8;
-}
-
-.espacio {
-    flex: 1;
-}
-
-
-/* ---------- RECUADRO PRINCIPAL ---------- */
-
-.cuerpo {
-    flex: 1;
-    display: flex;
-    margin: 10px 20px;
-    min-height: 450px;
-}
-
-.panel {
-    background: rgba(255, 255, 255, .93);
-    border-radius: 14px;
-    padding: 20px;
-    overflow: auto;
-}
-
-.contenido {
-    flex: 1;
-}
-
-.bienvenida {
-    text-align: center;
-    margin-top: 120px;
-    color: #333;
-}
-
-.bienvenida h2 {
-    color: #00664f;
-    font-size: 28px;
-    margin: 0 0 10px;
-}
-</style>
 
 </body>

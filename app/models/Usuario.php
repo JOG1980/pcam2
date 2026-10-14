@@ -113,7 +113,6 @@ class Usuario
                     u.email, 
                     u.ip, 
                     u.rol_id,
-                    u.nivel_inicial, 
                     r.nombre as nombre_rol  
                 FROM usuarios as u 
                 INNER JOIN roles as r ON u.rol_id = r.id";
@@ -138,7 +137,7 @@ class Usuario
     // ---------------------------------------------------------
     // AGREGAR NUEVO USUARIO
     // ---------------------------------------------------------
-    public function nuevo($nombre, $username, $password, $email, $ip, $rol_id, $nivel)
+    public function nuevo($nombre, $username, $password, $email, $ip, $rol_id)
     {
         // Se conecta a la base de datos.
         $db = new PDO('sqlite:' . $this->bd_path);
@@ -154,9 +153,8 @@ class Usuario
                     email, 
                     ip, 
                     rol_id,
-                    nivel_inicial,
                     editable)  
-                VALUES ('$nombre','$username','$password','$email','$ip',$rol_id,'$nivel',1)";
+                VALUES ('$nombre','$username','$password','$email','$ip',$rol_id,1)";
 
         // Preparamos la consulta.
         $stmt = $db->prepare($sql);
@@ -175,7 +173,7 @@ class Usuario
     // ---------------------------------------------------------
     // ACTUALIZAR USUARIO
     // ---------------------------------------------------------
-    public function actualizar($id, $nombre, $username, $password, $email, $ip, $rol_id, $nivel)
+    public function actualizar($id, $nombre, $username, $password, $email, $ip, $rol_id)
     {
         // Se conecta a la base de datos.
         $db = new PDO('sqlite:' . $this->bd_path);
@@ -190,8 +188,7 @@ class Usuario
                     password = '$password', 
                     email = '$email', 
                     ip = '$ip', 
-                    rol_id = $rol_id,
-                    nivel_inicial = '$nivel' 
+                    rol_id = $rol_id
                 WHERE id=$id";
 
         // Preparamos la consulta.

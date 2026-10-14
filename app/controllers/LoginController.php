@@ -82,9 +82,6 @@ class LoginController
             $_SESSION['nombre_usuario'] = $reg_ip['nombre'];
             //$_SESSION['ip_usuario'] = $reg_ip['ip'];
             $_SESSION['rol_id'] = $reg_ip['rol_id'];
-            //$_SESSION['ruta_inicial'] = ROOT_PATH.'/'.$config->contenedor_ruta_base . $reg_ip['nivel_inicial'];
-            $_SESSION['nivel_inicial'] = $reg_ip['nivel_inicial'];
-            //header("Location: contenido.php");
             require VIEW_PATH . '/contenido.php';
             exit;
         } else {
