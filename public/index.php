@@ -9,7 +9,12 @@
 //es importnte que siempre se ejecute primero este archivo para que genere estas rutas
 session_start();
 
-
+//definimos los roles de la base de datos como variables estaticas
+define('_ADMINISTRADOR_',1);	
+define('_SUPERVISOR_',2);
+define('_CONTROL_ZOT_',3);
+define('_CONTROL_SE_',4);
+define('_INVITADO_',5);
 
 if (!defined('ROOT_PATH')) { //si la ruta raiz no esta definida, define todas las rutas requeridas
     define('ROOT_PATH', dirname(__DIR__));
@@ -24,7 +29,7 @@ if (!defined('ROOT_PATH')) { //si la ruta raiz no esta definida, define todas la
 // ini_set('display_errors', 0);
 // error_reporting(0);
 
-$mi = CONTROLLER_PATH;
+//$mi = CONTROLLER_PATH;
 
 // Busca en la URL si se indicó qué controller se quiere utilizar. 
 //$_GET['controller'] obtiene el valor de "controller" de la URL.?? significa: si no existe ese valor, utiliza el que está después. 
@@ -59,16 +64,17 @@ if ($controller == 'login') {
             $_GET['LOGIN_ERROR'] = true; //la utiklizamos para saber que ubo un error de usuario y password
         }
     }
-    else if ($action == 'nologin') {
-
-       if (($config['contenedor_privado'] ?? 0) == '0') {
-        // Existe y tiene valor
-            require_once CONTROLLER_PATH . '/LoginController.php';
-            $obj = new LoginController();
-            $obj->noValidar();
-            exit;
-        }   
-    }
+    // else if ($action == 'nologin') {
+    //     //validamos si la pagina es privada 
+    //     //de no serlo autoriza el acceso con no validar
+    //    if (($config['pagina_privada'] ?? 0) == '0') {
+    //     // Existe y tiene valor
+    //         require_once CONTROLLER_PATH . '/LoginController.php';
+    //         $obj = new LoginController();
+    //         $obj->noValidar();
+    //         exit;
+    //     }   
+    // }
    
 } 
 

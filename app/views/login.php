@@ -31,48 +31,11 @@ $config_data = Config::load();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $config_data->titulo_pagina ?></title>
 
-    <!--CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"-->
-
     <link rel="icon" type="image/png" sizes="32x32" href="./images/cfe_letras.png" />
 
-    <style>
-        body {
-    margin: 0;
-    position: relative;
-    min-height: 100vh;
-    background: transparent;
-    overflow: hidden;
-        }
-
-       body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background-image: url("./images/editable/fondocfe.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    opacity: 1;
-    pointer-events: none;
-    z-index: -1;
-}
-      .contenido {
-    background: rgba(255, 255, 255, 1.0);
-    padding: 20px;
-    margin: 120px auto;
-    width: 750px;
-    border-radius: 50px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-}
-    </style>
+    <!--CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/login.css">
 
 </head>
 
@@ -118,8 +81,7 @@ $config_data = Config::load();
                         </div>
                         <br>
                         <div style='text-align: right;'>
-                            <button type="button" class="btn  btn-warning" name="nologin" onclick="submitInvitado();" style="<?php if($config_data->contenedor_privado=='1') echo 'visibility: hidden;';  ?>">Entrar como invitado</button>
-                            <button type="submit" class="btn  btn-primary" name="loginUser" onclick="submitConCredenciales();">Entrar</button>
+                            <button type="button" class="btn  btn-primary" name="loginUser" onclick="submitConCredenciales();">Entrar</button>
                         </div>
                     </form>
 

@@ -50,13 +50,10 @@ class LoginController
     //lo ocupamos cuando el contenedor es publico y no necesitamos logueo para entrar como invitados
     public function noValidar()
     {
-
             $_SESSION['LOGIN_OK'] = true;
             $_SESSION['nombre_usuario'] = "Invitado";
             //$_SESSION['ip_usuario'] = $reg_ip['ip'];
-            $_SESSION['rol_id'] = "3";//invitado  
-            //$_SESSION['ruta_inicial'] = ROOT_PATH.'/'.$config->contenedor_ruta_base . $reg_ip['nivel_inicial'];
-            $_SESSION['nivel_inicial'] = "";
+            $_SESSION['rol_id'] = _INVITADO_;//invitado  
             //header("Location: contenido.php");
             require VIEW_PATH . '/contenido.php';
             exit;
@@ -105,8 +102,6 @@ class LoginController
             $_SESSION['nombre_usuario'] = $reg_usuario['nombre'];
             //$_SESSION['ip_usuario'] = $reg_usuario['ip'];
             $_SESSION['rol_id'] = $reg_usuario['rol_id'];
-            //$_SESSION['ruta_inicial'] = ROOT_PATH.'/'.$config->contenedor_ruta_base . $reg_usuario['nivel_inicial'];
-            $_SESSION['nivel_inicial'] = $reg_usuario['nivel_inicial'];
             //header("Location: contenido.php");
             require VIEW_PATH . '/contenido.php';
             exit;

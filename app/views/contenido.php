@@ -151,12 +151,18 @@ if($config_data->canvas_usar_background_color){
 
             <button class="btn-barra"
                 type="button"
-                id='btn_config_list_users' title='Configuración de usuarios'>
+                id='btn_config_list_users1' title='Configuración de usuarios'>
                 <img src="images/barra/usuarios.svg" alt="">
                 <span>Usuarios</span>
-        </button>
+            </button>
 
-
+             <button class="btn-menu"
+                type="button"
+                id='btn_config_list_users' title='Configuración de usuarios'>
+                <i class="bi bi-people-fill btn-xl"></i>
+                <span>Usuarios</span>
+            </button>
+            
 
 
             <button class="btn-barra" type="button">
