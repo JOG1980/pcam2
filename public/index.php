@@ -100,9 +100,8 @@ else if ($controller == 'usuarios') {
             $email = $datos['email'];
             $ip = $datos['ip'];
             $rol = $datos['rol'];
-            $nivel = $datos['nivel'];
             $obj = new UsuariosController();
-            $obj->nuevoUsuarioBD($nombre,$username,$password,$email,$ip,$rol,$nivel);
+            $obj->nuevoUsuarioBD($nombre,$username,$password,$email,$ip,$rol);
             exit;
         } else if ($action == 'actualizar') {
             $datos = json_decode(file_get_contents("php://input"), true);
@@ -113,9 +112,8 @@ else if ($controller == 'usuarios') {
             $email = $datos['email'];
             $ip = $datos['ip'];
             $rol = $datos['rol'];
-            $nivel = $datos['nivel'];
             $obj = new UsuariosController();
-            $obj->actualizarUsuarioBD($id,$nombre,$username,$password,$email,$ip,$rol,$nivel);
+            $obj->actualizarUsuarioBD($id,$nombre,$username,$password,$email,$ip,$rol);
             exit;
         } else if ($action == 'borrar') {
             $datos = json_decode(file_get_contents("php://input"), true);
@@ -151,7 +149,7 @@ else if ($controller == 'configuracion') {
         }
     }
 }
-//recobrar cr4edenciales --------------------------
+//recobrar credenciales --------------------------
 else if ($controller == 'recobrarcredenciales') {
 
 

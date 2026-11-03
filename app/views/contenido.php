@@ -21,23 +21,9 @@
 
 
 //require_once CONFIG_PATH . '/config.php'; //incluye la variable de $config_data para la configuracion
-//require_once('./utils.php'); //incluye la variable de $config_data para la configuracion
-
-
-// $ruta_contenedor_ruta_base = $config_data->contenedor_ruta_base; //"__FCONTAINER__" definido en el xml
-// $ruta_inicial = $ruta_contenedor_ruta_base . $config_data->nivel_inicial;
-
-// $_SESSION['_RUTA_INICIAL_'] = $ruta_inicial;
 //se carga la variable $config_data con los datos de configuracion
 $config_data = Config::load();
 
-
-//$ruta_inicial = $contenedor_ruta_base . $_SESSION['nivel_inicial'];
-
-//busqueda de carpetas -----------------------------------------------
-//$carpetas = buscarCarpetas($ruta_contenedor );
-//$carpetas_json = json_encode($carpetas);
-//$carpetas1 = json_encode($carpetas, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
 
 $rol_id = $_SESSION['rol_id'];
@@ -74,7 +60,6 @@ if($config_data->canvas_usar_background_color){
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/menu.css" />
     <link rel="stylesheet" href="css/contenido.css" />
     
 
@@ -136,44 +121,33 @@ if($config_data->canvas_usar_background_color){
     
     <div class="container-fluid">
         <!--segunda pagina barra y recuadro -->
-        <nav class="barra">
-            <a class="btn-barra" href="#">
-                <img src="images/barra/inicio.svg" alt="">
-                <span>Inicio</span>
+        <nav class="barra_menu">
+            <a class="btn-barra_menu" href="#">
+                <i class="bi bi-house-fill"></i>
+                
             </a>
 
-            <div class="espacio"></div>
+            <div class="espacio_barra_menu"></div>
 
-            <a class="btn-barra" href="#">
-                <img src="images/barra/confi.svg" alt="">
-                <span>Administrar</span>
+            <a class="btn-barra_menu" href="#">
+                <i class="bi bi-gear-fill"></i>
             </a>
 
-            <button class="btn-barra"
-                type="button"
-                id='btn_config_list_users1' title='Configuración de usuarios'>
-                <img src="images/barra/usuarios.svg" alt="">
-                <span>Usuarios</span>
-            </button>
-
-             <button class="btn-menu"
+            <button class="btn-barra_menu"
                 type="button"
                 id='btn_config_list_users' title='Configuración de usuarios'>
-                <i class="bi bi-people-fill btn-xl"></i>
-                <span>Usuarios</span>
-            </button>
-            
-
-
-            <button class="btn-barra" type="button">
-                <img src="images/barra/BajarArchivos.svg" alt="">
-                <span>Descargar</span>
+                <i class="bi bi-person-fill-gear"></i>
             </button>
 
-        <a class="btn-barra" href="index.php?controller=auth&action=logout">
-            <img src="images/barra/logout.svg" alt="">
-                <span>Salir</span>
-            </a>
+
+        
+            <button class="btn-barra_menu" type="button">
+                <i class="bi bi-cloud-download-fill"></i>
+            </button>
+
+        <a class="btn-barra_menu" href="index.php?controller=auth&action=logout">
+            <i class="bi bi-door-open-fill"></i>
+        </a>
         </nav>
 
 
